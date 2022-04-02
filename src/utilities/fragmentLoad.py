@@ -21,5 +21,5 @@ class FragmentLoader:
             for i,res in enumerate(json_response['responses']):
                 file_meta['pages'][i] = res['fullTextAnnotation']['text']
             print(file_meta)
-            publisher = Publisher(Config.PROJECT_ID,Config.TRANSLATE_TOPIC)
+            publisher = Publisher(Config.PROJECT_ID,Config.OBJECT_TO_TEXT_TOPIC)
             publisher.publish_to_topic(file_meta)
